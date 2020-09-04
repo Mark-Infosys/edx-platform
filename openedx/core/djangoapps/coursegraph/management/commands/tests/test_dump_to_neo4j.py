@@ -414,7 +414,7 @@ class TestModuleStoreSerializer(TestDumpToNeo4jCommandBase):
         mock_graph = MockGraph()
         mock_graph_constructor.return_value = mock_graph
         mock_selector_class.return_value = MockNodeSelector(mock_graph)
-        mock_credentials = mock.Mock()
+        mock_credentials = {}
 
         submitted, skipped = self.mss.dump_courses_to_neo4j(mock_credentials)
 
@@ -441,7 +441,7 @@ class TestModuleStoreSerializer(TestDumpToNeo4jCommandBase):
         mock_graph = MockGraph(transaction_errors=True)
         mock_graph_constructor.return_value = mock_graph
         mock_selector_class.return_value = MockNodeSelector(mock_graph)
-        mock_credentials = mock.Mock()
+        mock_credentials = {}
 
         submitted, skipped = self.mss.dump_courses_to_neo4j(mock_credentials)
 
@@ -472,7 +472,7 @@ class TestModuleStoreSerializer(TestDumpToNeo4jCommandBase):
         mock_graph = MockGraph()
         mock_graph_constructor.return_value = mock_graph
         mock_selector_class.return_value = MockNodeSelector(mock_graph)
-        mock_credentials = mock.Mock()
+        mock_credentials = {}
 
         # run once to warm the cache
         self.mss.dump_courses_to_neo4j(
@@ -496,7 +496,7 @@ class TestModuleStoreSerializer(TestDumpToNeo4jCommandBase):
         mock_graph = MockGraph()
         mock_graph_constructor.return_value = mock_graph
         mock_selector_class.return_value = MockNodeSelector(mock_graph)
-        mock_credentials = mock.Mock()
+        mock_credentials = {}
 
         # run once to warm the cache
         submitted, skipped = self.mss.dump_courses_to_neo4j(mock_credentials)
